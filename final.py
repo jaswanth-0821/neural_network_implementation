@@ -66,13 +66,9 @@ for i in  range(200):
     loss_function = Loss_Cat_cross()
     loss = loss_function.calculate(softmax_activation1.output,y)
    
-    
     probs1 =activation1.output
-
     dscores1 = probs1
-  
     dscores1[range(num_examples),y]-=1
-   
     dscores1/=num_examples
 
     dw1 = np.dot(X.T,dscores1)
@@ -91,13 +87,9 @@ for i in  range(200):
         loss_function = Loss_Cat_cross()
         loss = loss_function.calculate(softmax_activation1.output,y)
      
-        
         probs2 =softmax_activation1.output
-
         dscores2 = probs2
-       
         dscores2[range(num_examples),y]-=1
-        
         dscores2/=num_examples
 
         dw2 = np.dot(activation1.output.T,dscores2)
